@@ -12,7 +12,7 @@ router.route("/").get((req, res) => {
     const { platform } = req.query
     const body = req.body
     const options = new Object()
-    const folder = path.join(process.__dirname, "public", "shortcuts")
+    const folder = path.join(process.__dirname, "shortcuts")
     let eMessage = "success"
 
     body["outputPath"] = folder
