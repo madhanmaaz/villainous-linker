@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Villainous Linker</title>
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="/assets/js/app.js" defer></script>
+</head>
+
+<body>
+    <div class="side-bar">
+        <div class="logo">
+            <h2>Villainous<span>Linker</span></h2>
+        </div>
+
+        <h4>platform</h4>
+        <button class="open-platform-btn active" data-value="windows">
+            <i class="fa-brands fa-windows"></i>
+            <span>windows</span>
+        </button>
+        <button class="open-platform-btn" data-value="linux">
+            <i class="fa-brands fa-linux"></i>
+            <span>linux</span>
+        </button>
+        <button class="open-platform-btn" data-value="osx">
+            <i class="fa-brands fa-apple"></i>
+            <span>osx</span>
+        </button>
+    </div>
+
+    <div class="main-container">
+        <div class="head">
+            <h3 id="platform-title">windows</h3>
+
+            <div class="right">
+                <button class="b-btn" id="create-btn">Create</button>
+                <button type="button" class="b-btn" id="open-sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- windows -->
+        <div class="platform-content windows-container active">
+            <div class="inp-box">
+                <label>name</label>
+                <input type="text" placeholder="Ex: chrome" name="name" required class="props">
+            </div>
+            <div class="inp-box">
+                <label>comment</label>
+                <input type="text" placeholder="Ex: Internet" name="comment" class="props">
+            </div>
+            <div class="inp-box">
+                <label>icon</label>
+                <input type="text" name="icon"
+                    placeholder="Ex: C:\path\to\app.exe | path\to\file.dll,0 | path\to\file.ico" class="props">
+            </div>
+            <div class="inp-box">
+                <label>application</label>
+                <input type="text" name="filePath" placeholder="Ex: cmd.exe | path\to\app.exe" required class="props">
+            </div>
+            <div class="inp-box">
+                <label>arguments</label>
+                <textarea rows="4" name="arguments" placeholder="Ex: /c &quot;start brave https://google.com&quot;"
+                    class="props"></textarea>
+            </div>
+            <div class="inp-box">
+                <label>window Mode</label>
+                <select name="windowMode" class="props">
+                    <option value="normal">normal</option>
+                    <option value="minimized">minimized</option>
+                    <option value="maximized">maximized</option>
+                </select>
+            </div>
+
+            <div class="inp-box">
+                <label>hot key</label>
+                <input class="props" type="text" name="hotkey" placeholder="Ex: CTRL+ALT+B | CTRL+SHIFT+B | F7">
+            </div>
+        </div>
+
+        <!-- linux -->
+        <div class="platform-content linux-container">
+            <div class="inp-box">
+                <label>name</label>
+                <input type="text" placeholder="Ex: chrome" name="name" class="props" required>
+            </div>
+            <div class="inp-box">
+                <label>description</label>
+                <input type="text" placeholder="Ex: Internet" name="description" class="props">
+            </div>
+            <div class="inp-box">
+                <label>icon</label>
+                <input class="props" type="text" placeholder="Ex: path/to/file.png | path/to/file.icns" name="icon">
+            </div>
+            <div class="inp-box">
+                <label>application</label>
+                <input required class="props" type="text" placeholder="Ex: path/to/app" name="filePath">
+            </div>
+            <div class="inp-box">
+                <label>type</label>
+                <select name="type" class="props">
+                    <option value="Application">Application</option>
+                    <option value="Directory">Directory</option>
+                    <option value="Link">Link</option>
+                </select>
+            </div>
+            <div class="inp-box">
+                <label>terminal</label>
+                <select class="props" name="terminal">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div class="inp-box">
+                <label>chmod</label>
+                <select name="chmod" class="props">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+            <div class="inp-box">
+                <label>arguments</label>
+                <textarea class="props" rows="4" name="arguments"
+                    placeholder="Ex: -c firefox https://google.com"></textarea>
+            </div>
+        </div>
+
+        <!-- osx -->
+        <div class="platform-content osx-container">
+            <div class="inp-box">
+                <label>name</label>
+                <input type="text" placeholder="Ex: chrome" name="name" class="props" required>
+            </div>
+            <div class="inp-box">
+                <label>application</label>
+                <input type="text" name="filePath" placeholder="Ex: path/to/app" required class="props">
+            </div>
+            <div class="inp-box">
+                <label>overwrite</label>
+                <select name="overwrite" class="props">
+                    <option value="true">true</option>
+                    <option value="false">false</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
